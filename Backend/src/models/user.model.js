@@ -1,0 +1,52 @@
+import mongoose  from "mongoose";
+const userSchema = new mongoose.Schema({
+    name:{
+        type:String,
+        required:true
+    },
+    email:{
+        type:String,
+        required:true
+    },
+    password:{
+        type:String,
+        required:true
+    },
+    phone:{
+        type:String,
+        required:true
+    },
+    role:{
+        type:String,
+        enum:["user","admin"],
+        default:"user"
+    },
+    isSubscribed:{
+        type:Boolean,
+        default:false
+    },
+    plan:{
+        type:String,
+        enum:["monthly","yearly"]
+    },
+    scores:[
+        {
+            value:{
+                type:Number,
+                min:1,
+                max:45
+            },
+            date:{
+                type:Date,
+                default:Date.now
+            }
+        }
+    ],
+    winnings:{
+        total:{
+            type:Number,
+            default:0
+        }
+    }
+},{timestamps:true})
+export default mongoose.model("User",userSchema)

@@ -87,26 +87,21 @@ export const loginUser = async (req, res) => {
         });
     }
 };
-export const logout = async(req,res)=>{
-    try{
-        const token = req.cookies.user_token 
-        if(!token){
-            return res.status(400).json(
-                {
-                    message:"User already logged out"
-                }
-            )
-        }
-        res.clearCookie("user_token",{
-            httpOnly:true,
-            samesite:"strict",
-            secure:true
-        })
-        res.status(200).json({
-            message:"user logged out successfully"
-        })
+export const logout = async (req, res) => {
+    try {
+        res.clearCookie("user_token", {
+            httpOnly: true,
+            sameSite: "lax",   
+            secure: false      
+        });
+
+        return res.status(200).json({
+            message: "User logged out successfully"
+        });
+
+    } catch (err) {
+        return res.status(500).json({
+            message: "Server error"
+        });
     }
-    catch(err){
-        console.log(err)
-    }
-}
+};

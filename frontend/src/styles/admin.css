@@ -1,0 +1,67 @@
+.admin-bg {
+  min-height: 100vh;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)
+    ),
+    url("https://images.unsplash.com/photo-1599058917765-a780eda07a3e");
+
+  background-size: cover;
+  background-position: center;
+  padding: 40px;
+}
+
+.admin-container {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.primary-btn {
+  padding: 10px 20px;
+  background: #0b3d2e;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.primary-btn:hover {
+  background: #145c45;
+}
+
+.stats p {
+  margin: 5px 0;
+}
+
+.draw-box {
+  margin-top: 20px;
+}
+
+.table-box {
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background: #0b3d2e;
+  color: white;
+}
+
+td,
+th {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.paid-btn {
+  background: green;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  cursor: pointer;
+}

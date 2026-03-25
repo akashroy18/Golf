@@ -14,9 +14,12 @@ import charityRoutes from "./routes/charity.routes.js"
 const app = express()
 
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: [
+    "http://localhost:5173",
+    "https://golf-frontend-liard.vercel.app"
+  ],
   credentials: true
-}))
+}));
 
 app.use(express.json())
 app.use(cookieParser())
